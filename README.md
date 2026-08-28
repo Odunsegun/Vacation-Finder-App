@@ -27,15 +27,6 @@ A cross-platform destination-discovery application built with Flutter and Dart. 
 - SQLite
 - SharedPreferences
 
-## Screenshots
-
-| Destination map | Community posts |
-|---|---|
-| ![Destination map](docs/screenshots/map.png) | ![Community posts](docs/screenshots/posts.png) |
-
-| Saved places | French localization |
-|---|---|
-| ![Saved places](docs/screenshots/saved-places.png) | ![French localization](docs/screenshots/localization-fr.png) |
 
 ## Getting Started
 
