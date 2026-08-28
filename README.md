@@ -1,68 +1,105 @@
-Vacation Finder App 🏖️✈️
+# Vacation Finder App 🏖️
 
-Overview
+A cross-platform destination-discovery application built with Flutter and Dart. Vacation Finder combines interactive mapping, location search, saved places, community posts, and English/French localization.
 
-Vacation Finder is a trip planner and vacation spot discovery app built with Flutter. Users can plan trips, save places, and explore destinations recommended by others. The app integrates Firebase for backend services and uses geolocation APIs for mapping and location-based features.
+> This was developed collaboratively as a university mobile-development project. My contributions focused on Firestore-backed post and location management, post update integration, and English/French localization.
 
-Features
+## Features
 
-🌍 Trip Planner – Organize trips and save details of your planned vacations.
+- Search for destinations using Google Places
+- Explore locations on an interactive OpenStreetMap-based map
+- Access the device’s current location
+- Display routes between the user and selected destinations
+- Save and revisit places through Cloud Firestore
+- Create and browse location-based community posts
+- Store profile contact information locally using SQLite
+- Switch between English and French
 
-📌 Place Saver – Save your favorite destinations for quick access later.
+## Technology Stack
 
-🗺️ Geolocation & Maps – Integrated with Google Maps and geocoding APIs.
+- Flutter and Dart
+- Firebase Core
+- Cloud Firestore
+- Firebase Authentication
+- `flutter_map` with OpenStreetMap tiles
+- Google Places, Directions and Geocoding APIs
+- Geolocator
+- SQLite
+- SharedPreferences
 
-🤝 Community Recommendations – View places visited and recommended by other users nearby.
+## Screenshots
 
-📝 Post Places – Share your own favorite spots with the community.
+| Destination map | Community posts |
+|---|---|
+| ![Destination map](docs/screenshots/map.png) | ![Community posts](docs/screenshots/posts.png) |
 
-🌐 Multi-language Support – Choose your preferred language for the app experience.
+| Saved places | French localization |
+|---|---|
+| ![Saved places](docs/screenshots/saved-places.png) | ![French localization](docs/screenshots/localization-fr.png) |
 
-🔥 Firebase Integration – Secure authentication, cloud database, and storage support.
+## Getting Started
 
-Tech Stack
+### Prerequisites
 
-Frontend: Flutter (Dart)
+- Flutter SDK
+- Dart SDK
+- Android Studio or Visual Studio Code
+- An Android emulator or physical device
+- Firebase CLI
+- A Firebase project
+- A restricted Google Maps Platform API key
 
-Backend: Firebase (Authentication, Firestore, Cloud Storage)
+### Clone the repository
 
-APIs: Google Maps, Geocoding, Geolocation
+```bash
+git clone https://github.com/Odunsegun/Vacation-Finder-App.git
+cd Vacation-Finder-App
+```
 
-Database: Firestore & SQLite (local caching)
+### Install dependencies
 
-Setup & Installation
-
-Clone the repo:
-
-git clone <your-repo-link>
-cd vacation-finder
-
-Install dependencies:
-
+```bash
 flutter pub get
+```
 
+### Configure Firebase
 
-Set up Firebase:
+```bash
+firebase login
+dart pub global activate flutterfire_cli
+flutterfire configure
+```
 
-Add your Firebase configuration files (google-services.json for Android, GoogleService-Info.plist for iOS).
+Select your Firebase project and desired platforms. Enable Cloud Firestore and Email/Password Authentication in the Firebase Console.
 
-Run the app:
+### Configure the Maps API key
 
-flutter run
+Provide a restricted Google Maps Platform key at build time:
 
+```bash
+flutter run --dart-define=GOOGLE_MAPS_API_KEY=YOUR_RESTRICTED_KEY
+```
 
-Screenshots
+Do not commit unrestricted API keys or service-account credentials.
 
+### Validate the project
 
-Contributors
+```bash
+flutter analyze
+flutter test
+```
 
-You – Backend (Firebase, database)
+## My Contributions
 
-Teammates – Additional backend & frontend development
+- Implemented Firestore-backed post and location-management functionality
+- Integrated post creation and update workflows
+- Added and refined English/French localization
+- Fixed integration issues across post, database and location components
 
+The repository’s Git history preserves all team contributions.
 
-License
+## Current Limitations
 
-MIT License. Feel free to use and modify for personal or educational projects.
-
-
+- A configured Firebase project and Maps API key are required
+- Map and place-search features require an internet connection
+- Automated test coverage is limited
